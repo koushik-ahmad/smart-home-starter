@@ -1,8 +1,7 @@
 import React from 'react'
 
-const Product = () => {
-  const product = {}
-  const { name, picture, price, category } = product
+const Product = ({ product }) => {
+  const { name, picture, price, category } = product;
   return (
     <div className='bg-gray-100 p-6 rounded shadow-lg'>
       <img
@@ -23,4 +22,4 @@ const Product = () => {
   )
 }
 
-export default Product
+export default Product;
