@@ -4,13 +4,16 @@ import Root from "../components/Root";
 import About from "../components/About";
 import ErrorPage from "../components/ErrorPage";
 import Shop from "../components/Shop";
+import Cart from "../components/Cart";
+import { productsAndCartData } from "../loaders/getCart&ProductsData";
+
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: <Root></Root>,
         errorElement: <ErrorPage></ErrorPage>,
-        loader: () => fetch('products.json'),
+        loader: () => productsAndCartData(),
         children: [
             {
                 path: '/',
@@ -23,6 +26,10 @@ const router = createBrowserRouter([
             {
                 path: '/shop',
                 element: <Shop></Shop>
+            },
+            {
+                path: '/cart',
+                element: <Cart></Cart>
             },
             {
                 path: '/about',
